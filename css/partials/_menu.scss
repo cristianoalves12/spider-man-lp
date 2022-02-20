@@ -1,0 +1,122 @@
+header {
+    z-index: 2;
+    width: 100%;
+    /* Irá cobrir a tela de ponta a ponta completando a tela*/
+    padding-top: 16px;
+    /* Espaçamento do topo para que não fique colado ao topo */
+}
+
+.navbar {
+    /* O ESTILIZANDO O NAVBAR QUE CONTEM A BARRA SUPERIOR DE MENU */
+    max-width: 1440px;
+    /* definindo a largura maxima de 1440 para os componetes da barra superior*/
+    margin: 0 auto;
+    padding: 0 16px;
+    /* centraliza a barra */
+    display: flex;
+    /* um do lado do outro*/
+    justify-content: space-between;
+    /* Os componetes se alinha a direita e esquerda da suas div pai*/
+    align-items: center;
+    /* Alinha horizontalmente*/
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    li {
+        margin-left: 24px;
+        /* Margem de 24px a esquerda de cada nome */
+    }
+    @include responsive() {
+        display: none;
+    }
+}
+
+.logo {
+    max-width: 88px;
+}
+
+.nav-link {
+    display: inline-block;
+    /* Se ajusta de acordo com o tamanho do conteudo */
+    font-size: 14px;
+    letter-spacing: 2px;
+    /* Espaçamento entre letras */
+    text-transform: uppercase;
+    /* Sempre transforma em letra maiuscula */
+    font-weight: 200;
+    color: $gray-3;
+    /* Peso da fonte */
+    padding: 8px 16px;
+    /* Area de toque 1ºcima e baixo 2ºlados */
+    transition: .7s ease;
+    position: relative;
+
+    &::after {
+        /* Pseudo elemento, nesse caso hover e teia */
+        content: '';
+        /* Conteudo nesse caso ficou vazio*/
+        display: block;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        /* Posicionado no meio */
+        width: 2px;
+        height: 0;
+        background: linear-gradient(180deg, rgba(233, 29, 34, 0) 0%, #e91d22 100%);
+    }
+
+    &:hover {
+        color: $white-light;
+        
+        &::after {
+            transition: .7s ease;
+            height: 40px;
+        }
+    }
+}
+
+.bx {
+    display: none;
+
+    @include responsive() {
+        display: block;
+        width: 48px;
+        height: 48px;
+
+        background-color: $white-light;
+
+        border-radius:8px;
+    }    
+}
+
+.nav-social{
+    display: flex;
+    
+    svg {
+        cursor: pointer;
+        margin-left: 16px;
+        width: 24px;
+
+        path, circle {
+            transition: .7s ease;
+        }
+        &:hover {
+            path, circle {
+                fill: #e91d22;
+                transform: translate3d(0, -3px, 0);
+            }
+        }
+    }
+
+    @include responsive() {
+        display: none;
+    }
+}

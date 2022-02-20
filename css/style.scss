@@ -1,0 +1,54 @@
+*, *::after, *::before {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+@mixin responsive() {
+    @media screen and (max-width: 960px) {
+        @content;
+    }
+}
+@mixin responsiveVar() {
+    @media screen and (max-width: 1373px) {
+        @content;
+    }
+}
+
+@import 'partials/colors';
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    background-color: $blue-dark;
+}
+
+img, svg {
+    display: block;
+    width: 100%;
+    /*Define as img e svg se ajustar ao tamanho da tela assim criando um layout responsivo */
+}
+
+a {
+    text-decoration: none;
+    color: $white;
+}
+
+.border {
+    /* O '.' no inicio indica a criação de uma classe */
+    border: 1px solid red;
+}
+
+p {
+    font-size: 14px;
+    color: $gray-3;
+    letter-spacing: 1px;
+    line-height: 140%;
+}
+
+@import 'partials/layout';
+@import 'partials/menu';
+@import 'partials/animations';
+@import 'partials/spacing'
