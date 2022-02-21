@@ -90,11 +90,26 @@ header {
         display: block;
         width: 48px;
         height: 48px;
-
-        background-color: $white-light;
-
-        border-radius:8px;
-    }    
+        background-color: #e91d22;
+        border-radius:20px;
+        position: relative;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            top: 30%;
+            left: 15%;
+    
+            width: 70%;
+            height: 10%;
+    
+            border-radius: 5%;
+            background-color: $white-light;
+        }
+    
+        
+    }
+    
 }
 
 .nav-social{
