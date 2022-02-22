@@ -1,4 +1,4 @@
-// observe quando carregar a pagina, após o carrgamento total execute determinada função
+/* observe quando carregar a pagina, após o carrgamento total execute determinada função*/
 document.addEventListener('DOMContentLoaded', () => {
     let tl = new TimelineMax();
     
@@ -40,6 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     tl.fromTo('.item-5', 0.7 ,
     {y: -50, opacity: 0}, 
-    {y: 0, opacity: 1, ease: Expo.easeinout}, '-=0.5')
+    {y: 0, opacity: 1, ease: Expo.easeinout}, '-=1.0')
 
 })
+
+$(document).ready(function() {
+    $(".bx").click(function () {
+        $(this).toggleClass("active");
+        $(".nav-list").toggleClass("active");
+        $(".nav-social").toggleClass("active");
+    });
+});
